@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 
 const db = new Sequelize('postgres://localhost:5432/plantr', {logging: false});
 
-module.exports = db;
+
 
 const Gardener = db.define('gardener', {
   name: {
@@ -50,10 +50,5 @@ Vegetable.belongsToMany(Plot, {through: 'vegetable_plot'})
 
 Gardener.belongsTo(Vegetable, {as: 'favorite_vegetable'})
 
-Vegetable.create({
-name: 'tomato',
-color: 'red',
-planted_on: Date.now()
-})
-  .then(veggie => console.log(veggie.name))
-  .catch(error => console.log(error))
+
+module.exports = { db, Gardener, Plot, Vegetable };

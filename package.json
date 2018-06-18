@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node seed.js"
+    "start": "nodemon seed.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
+    "nodemon": "^1.17.5",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.37.10"
